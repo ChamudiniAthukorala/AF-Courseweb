@@ -7,6 +7,7 @@ const users = require("./routes/api/users");
 const studets = require("./routes/api/student");
 const lecturers = require("./routes/api/lecturer");
 const notifications = require("./routes/api/notification");
+const marks = require("./routes/api/marks");
 
 const app = express();
 
@@ -35,6 +36,7 @@ app.use("/api/users", users);
 app.use("/api/student", studets);
 app.use("/api/lecturer", lecturers);
 app.use("/api/notification", notifications);
+app.use("/api/marks", marks);
 
 const port = process.env.PORT || 5000;
 
