@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import 'react-datepicker/dist/react-datepicker.css';
 
 export default class Assignments extends Component{
-
-
     
     render(){
         return(

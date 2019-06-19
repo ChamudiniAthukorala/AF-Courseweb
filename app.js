@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router , Route, Link} from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
-
-// import Header from './src/components/header';
-// import Footer from './src/components/footer';
 import Assignment from './src/components/Assignments';
 import Submission from './src/components/Submissions';
 
