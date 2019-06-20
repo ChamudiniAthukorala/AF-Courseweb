@@ -25761,7 +25761,7 @@ function _inheritsLoose(subClass, superClass) {
   subClass.prototype.constructor = subClass;
   subClass.__proto__ = superClass;
 }
-},{}],"node_modules/@babel/runtime/helpers/inheritsLoose.js":[function(require,module,exports) {
+},{}],"node_modules/mini-create-react-context/node_modules/@babel/runtime/helpers/inheritsLoose.js":[function(require,module,exports) {
 function _inheritsLoose(subClass, superClass) {
   subClass.prototype = Object.create(superClass.prototype);
   subClass.prototype.constructor = subClass;
@@ -26910,7 +26910,7 @@ function createReactContext(defaultValue, calculateChangedBits) {
 var index = _react.default.createContext || createReactContext;
 var _default = index;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","@babel/runtime/helpers/inheritsLoose":"node_modules/@babel/runtime/helpers/inheritsLoose.js","prop-types":"node_modules/prop-types/index.js","gud":"node_modules/gud/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js"}],"node_modules/@babel/runtime/helpers/esm/extends.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","@babel/runtime/helpers/inheritsLoose":"node_modules/mini-create-react-context/node_modules/@babel/runtime/helpers/inheritsLoose.js","prop-types":"node_modules/prop-types/index.js","gud":"node_modules/gud/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js"}],"node_modules/@babel/runtime/helpers/esm/extends.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28011,7 +28011,7 @@ function createMemoryHistory(props) {
   };
   return history;
 }
-},{"@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","resolve-pathname":"node_modules/resolve-pathname/index.js","value-equal":"node_modules/value-equal/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"node_modules/isarray/index.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","resolve-pathname":"node_modules/resolve-pathname/index.js","value-equal":"node_modules/value-equal/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"node_modules/path-to-regexp/node_modules/isarray/index.js":[function(require,module,exports) {
 module.exports = Array.isArray || function (arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
@@ -28444,7 +28444,7 @@ function pathToRegexp (path, keys, options) {
   return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
 }
 
-},{"isarray":"node_modules/isarray/index.js"}],"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js":[function(require,module,exports) {
+},{"isarray":"node_modules/path-to-regexp/node_modules/isarray/index.js"}],"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29693,12 +29693,6 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/react-datepicker/dist/react-datepicker.css":[function(require,module,exports) {
-
-        var reloadCSS = require('_css_loader');
-        module.hot.dispose(reloadCSS);
-        module.hot.accept(reloadCSS);
-      
 },{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/Assignments.js":[function(require,module,exports) {
 "use strict";
 
@@ -29708,8 +29702,6 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
-
-require("react-datepicker/dist/react-datepicker.css");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
@@ -29859,7 +29851,7 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = Assignments;
-},{"react":"node_modules/react/index.js","react-datepicker/dist/react-datepicker.css":"node_modules/react-datepicker/dist/react-datepicker.css"}],"src/components/Submissions.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"src/components/Submissions.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30011,6 +30003,107 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = Submissions;
+},{"react":"node_modules/react/index.js"}],"src/components/AddCourse.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var AddCourse =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(AddCourse, _Component);
+
+  function AddCourse() {
+    _classCallCheck(this, AddCourse);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(AddCourse).apply(this, arguments));
+  }
+
+  _createClass(AddCourse, [{
+    key: "render",
+    value: function render() {
+      return _react.default.createElement("div", null, _react.default.createElement("form", null, _react.default.createElement("div", {
+        className: "form-group"
+      }, _react.default.createElement("label", {
+        for: "courseId"
+      }, "Course ID :"), _react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "courseId"
+      })), _react.default.createElement("div", {
+        className: "form-group"
+      }, _react.default.createElement("label", {
+        for: "courseName"
+      }, "Course Name :"), _react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "courseName"
+      })), _react.default.createElement("div", null, _react.default.createElement("label", {
+        for: "courseDescription"
+      }, "Course Description :"), _react.default.createElement("textarea", {
+        className: "form-control rounded-0",
+        id: "courseDescription",
+        rows: "10"
+      })), _react.default.createElement("br", null), _react.default.createElement("div", {
+        className: "form-group"
+      }, _react.default.createElement("label", {
+        for: "year"
+      }, "Year:"), _react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "year"
+      })), _react.default.createElement("div", {
+        className: "form-group"
+      }, _react.default.createElement("label", {
+        for: "semester"
+      }, "Semester :"), _react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "semester"
+      })), _react.default.createElement("div", {
+        className: "form-group"
+      }, _react.default.createElement("label", {
+        for: "inCharge"
+      }, "Lecture in Charge :"), _react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "inCharge"
+      })), _react.default.createElement("button", {
+        type: "submit",
+        class: "btn btn-primary"
+      }, "Add Course")));
+    }
+  }]);
+
+  return AddCourse;
+}(_react.Component);
+
+exports.default = AddCourse;
 },{"react":"node_modules/react/index.js"}],"app.js":[function(require,module,exports) {
 "use strict";
 
@@ -30028,6 +30121,8 @@ require("bootstrap/dist/css/bootstrap.min.css");
 var _Assignments = _interopRequireDefault(require("./src/components/Assignments"));
 
 var _Submissions = _interopRequireDefault(require("./src/components/Submissions"));
+
+var _AddCourse = _interopRequireDefault(require("./src/components/AddCourse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30081,7 +30176,12 @@ function (_Component) {
       }, _react.default.createElement(_reactRouterDom.Link, {
         to: "/submissions",
         className: "nav-link"
-      }, "Submit Assignment")))), _react.default.createElement("br", null), _react.default.createElement(_reactRouterDom.Route, {
+      }, "Submit Assignment")), _react.default.createElement("li", {
+        className: "nav-item"
+      }, _react.default.createElement(_reactRouterDom.Link, {
+        to: "/courses",
+        className: "nav-link"
+      }, "Add Course")))), _react.default.createElement("br", null), _react.default.createElement(_reactRouterDom.Route, {
         path: "/",
         exact: true,
         component: _Assignments.default
@@ -30089,6 +30189,10 @@ function (_Component) {
         path: "/submissions",
         exact: true,
         component: _Submissions.default
+      }), _react.default.createElement(_reactRouterDom.Route, {
+        path: "/courses",
+        exact: true,
+        component: _AddCourse.default
       })));
     }
   }]);
@@ -30097,7 +30201,7 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = App;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","bootstrap/dist/css/bootstrap.min.css":"node_modules/bootstrap/dist/css/bootstrap.min.css","./src/components/Assignments":"src/components/Assignments.js","./src/components/Submissions":"src/components/Submissions.js"}],"main.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","bootstrap/dist/css/bootstrap.min.css":"node_modules/bootstrap/dist/css/bootstrap.min.css","./src/components/Assignments":"src/components/Assignments.js","./src/components/Submissions":"src/components/Submissions.js","./src/components/AddCourse":"src/components/AddCourse.js"}],"main.js":[function(require,module,exports) {
 "use strict";
 
 var _reactDom = require("react-dom");
@@ -30137,7 +30241,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65156" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53499" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

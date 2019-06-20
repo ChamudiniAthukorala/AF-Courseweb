@@ -3,6 +3,7 @@ import {BrowserRouter as Router , Route, Link} from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Assignment from './src/components/Assignments';
 import Submission from './src/components/Submissions';
+import AddCourse from './src/components/AddCourse';
 
 export default class App extends Component{
 
@@ -22,6 +23,11 @@ export default class App extends Component{
                                            Submit Assignment
                                         </Link>
                                     </li>
+                                    <li className="nav-item">
+                                        <Link to="/courses" className="nav-link">
+                                           Add Course
+                                        </Link>
+                                    </li>
                                     
                                     </ul>
                                    </nav>
@@ -29,7 +35,8 @@ export default class App extends Component{
       
                 <Route path="/" exact component={Assignment}/>
                 <Route path="/submissions" exact component={Submission}/>
-      
+                <Route path="/courses" exact component={AddCourse}/>
+
                  </div>
             </Router>
         )
