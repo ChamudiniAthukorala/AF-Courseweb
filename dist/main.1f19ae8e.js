@@ -30104,6 +30104,107 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = AddCourse;
+},{"react":"node_modules/react/index.js"}],"src/components/UpdateCourse.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var UpdateCourse =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(UpdateCourse, _Component);
+
+  function UpdateCourse() {
+    _classCallCheck(this, UpdateCourse);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(UpdateCourse).apply(this, arguments));
+  }
+
+  _createClass(UpdateCourse, [{
+    key: "render",
+    value: function render() {
+      return _react.default.createElement("div", null, _react.default.createElement("form", null, _react.default.createElement("div", {
+        className: "form-group"
+      }, _react.default.createElement("label", {
+        for: "courseId"
+      }, "Course ID :"), _react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "courseId"
+      })), _react.default.createElement("div", {
+        className: "form-group"
+      }, _react.default.createElement("label", {
+        for: "courseName"
+      }, "Course Name :"), _react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "courseName"
+      })), _react.default.createElement("div", null, _react.default.createElement("label", {
+        for: "courseDescription"
+      }, "Course Description :"), _react.default.createElement("textarea", {
+        className: "form-control rounded-0",
+        id: "courseDescription",
+        rows: "10"
+      })), _react.default.createElement("br", null), _react.default.createElement("div", {
+        className: "form-group"
+      }, _react.default.createElement("label", {
+        for: "year"
+      }, "Year:"), _react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "year"
+      })), _react.default.createElement("div", {
+        className: "form-group"
+      }, _react.default.createElement("label", {
+        for: "semester"
+      }, "Semester :"), _react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "semester"
+      })), _react.default.createElement("div", {
+        className: "form-group"
+      }, _react.default.createElement("label", {
+        for: "inCharge"
+      }, "Lecture in Charge :"), _react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "inCharge"
+      })), _react.default.createElement("button", {
+        type: "submit",
+        class: "btn btn-primary"
+      }, "Update Course")));
+    }
+  }]);
+
+  return UpdateCourse;
+}(_react.Component);
+
+exports.default = UpdateCourse;
 },{"react":"node_modules/react/index.js"}],"app.js":[function(require,module,exports) {
 "use strict";
 
@@ -30123,6 +30224,8 @@ var _Assignments = _interopRequireDefault(require("./src/components/Assignments"
 var _Submissions = _interopRequireDefault(require("./src/components/Submissions"));
 
 var _AddCourse = _interopRequireDefault(require("./src/components/AddCourse"));
+
+var _UpdateCourse = _interopRequireDefault(require("./src/components/UpdateCourse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30181,7 +30284,12 @@ function (_Component) {
       }, _react.default.createElement(_reactRouterDom.Link, {
         to: "/courses",
         className: "nav-link"
-      }, "Add Course")))), _react.default.createElement("br", null), _react.default.createElement(_reactRouterDom.Route, {
+      }, "Add Course")), _react.default.createElement("li", {
+        className: "nav-item"
+      }, _react.default.createElement(_reactRouterDom.Link, {
+        to: "/courses/:id",
+        className: "nav-link"
+      }, "Update Course")))), _react.default.createElement("br", null), _react.default.createElement(_reactRouterDom.Route, {
         path: "/",
         exact: true,
         component: _Assignments.default
@@ -30193,6 +30301,10 @@ function (_Component) {
         path: "/courses",
         exact: true,
         component: _AddCourse.default
+      }), _react.default.createElement(_reactRouterDom.Route, {
+        path: "/courses/:id",
+        exact: true,
+        component: _UpdateCourse.default
       })));
     }
   }]);
@@ -30201,7 +30313,7 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = App;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","bootstrap/dist/css/bootstrap.min.css":"node_modules/bootstrap/dist/css/bootstrap.min.css","./src/components/Assignments":"src/components/Assignments.js","./src/components/Submissions":"src/components/Submissions.js","./src/components/AddCourse":"src/components/AddCourse.js"}],"main.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","bootstrap/dist/css/bootstrap.min.css":"node_modules/bootstrap/dist/css/bootstrap.min.css","./src/components/Assignments":"src/components/Assignments.js","./src/components/Submissions":"src/components/Submissions.js","./src/components/AddCourse":"src/components/AddCourse.js","./src/components/UpdateCourse":"src/components/UpdateCourse.js"}],"main.js":[function(require,module,exports) {
 "use strict";
 
 var _reactDom = require("react-dom");
@@ -30241,7 +30353,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53499" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54000" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

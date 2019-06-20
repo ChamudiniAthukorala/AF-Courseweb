@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Assignment from './src/components/Assignments';
 import Submission from './src/components/Submissions';
 import AddCourse from './src/components/AddCourse';
+import UpdateCourse from './src/components/UpdateCourse';
 
 export default class App extends Component{
 
@@ -28,7 +29,11 @@ export default class App extends Component{
                                            Add Course
                                         </Link>
                                     </li>
-                                    
+                                    <li className="nav-item">
+                                        <Link to="/courses/:id" className="nav-link">
+                                           Update Course
+                                        </Link>
+                                    </li>
                                     </ul>
                                    </nav>
                                    <br />
@@ -36,6 +41,7 @@ export default class App extends Component{
                 <Route path="/" exact component={Assignment}/>
                 <Route path="/submissions" exact component={Submission}/>
                 <Route path="/courses" exact component={AddCourse}/>
+                <Route path="/courses/:id" exact component={UpdateCourse}/>
 
                  </div>
             </Router>
