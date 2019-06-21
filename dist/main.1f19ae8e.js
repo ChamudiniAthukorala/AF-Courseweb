@@ -30063,6 +30063,14 @@ function (_Component) {
         type: "text",
         className: "form-control",
         id: "courseName"
+      })), _react.default.createElement("div", {
+        className: "form-group"
+      }, _react.default.createElement("label", {
+        for: "enrollmentKey"
+      }, "Enrollment Key :"), _react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "enrollmentKey"
       })), _react.default.createElement("div", null, _react.default.createElement("label", {
         for: "courseDescription"
       }, "Course Description :"), _react.default.createElement("textarea", {
@@ -30205,6 +30213,218 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = UpdateCourse;
+},{"react":"node_modules/react/index.js"}],"src/components/AddMarks.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var AddMarks =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(AddMarks, _Component);
+
+  function AddMarks() {
+    _classCallCheck(this, AddMarks);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(AddMarks).apply(this, arguments));
+  }
+
+  _createClass(AddMarks, [{
+    key: "render",
+    value: function render() {
+      return _react.default.createElement("div", null, _react.default.createElement("form", null, _react.default.createElement("div", {
+        className: "form-group"
+      }, _react.default.createElement("label", {
+        for: "courseId"
+      }, "Course ID :"), _react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "courseId"
+      })), _react.default.createElement("div", {
+        className: "form-group"
+      }, _react.default.createElement("label", {
+        for: "courseName"
+      }, "Course Name :"), _react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "courseName"
+      })), _react.default.createElement("div", {
+        className: "form-group"
+      }, _react.default.createElement("label", {
+        for: "assignmentId"
+      }, "Assignment ID :"), _react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "assignmentId"
+      })), _react.default.createElement("div", {
+        className: "form-group"
+      }, _react.default.createElement("label", {
+        for: "inCharge"
+      }, "Lecture in Charge :"), _react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "inCharge"
+      })), _react.default.createElement("div", {
+        className: "form-group"
+      }, _react.default.createElement("div", {
+        class: "input-group"
+      }, _react.default.createElement("div", {
+        class: "input-group-prepend"
+      }, _react.default.createElement("span", {
+        class: "input-group-text",
+        id: "inputGroupFileAddon01"
+      }, "Upload Assignment")), _react.default.createElement("div", {
+        class: "custom-file"
+      }, _react.default.createElement("input", {
+        type: "file",
+        class: "custom-file-input",
+        id: "inputGroupFile01",
+        "aria-describedby": "inputGroupFileAddon01"
+      }), _react.default.createElement("label", {
+        class: "custom-file-label",
+        for: "inputGroupFile01"
+      }, "Choose file")))), _react.default.createElement("br", null), _react.default.createElement("button", {
+        type: "submit",
+        class: "btn btn-primary"
+      }, "Add Marks")));
+    }
+  }]);
+
+  return AddMarks;
+}(_react.Component);
+
+exports.default = AddMarks;
+},{"react":"node_modules/react/index.js"}],"src/components/UpdateMarks.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var UpdateMarks =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(UpdateMarks, _Component);
+
+  function UpdateMarks() {
+    _classCallCheck(this, UpdateMarks);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(UpdateMarks).apply(this, arguments));
+  }
+
+  _createClass(UpdateMarks, [{
+    key: "render",
+    value: function render() {
+      return _react.default.createElement("div", null, _react.default.createElement("form", null, _react.default.createElement("div", {
+        className: "form-group"
+      }, _react.default.createElement("label", {
+        for: "courseId"
+      }, "Course ID :"), _react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "courseId"
+      })), _react.default.createElement("div", {
+        className: "form-group"
+      }, _react.default.createElement("label", {
+        for: "courseName"
+      }, "Course Name :"), _react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "courseName"
+      })), _react.default.createElement("div", {
+        className: "form-group"
+      }, _react.default.createElement("label", {
+        for: "assignmentId"
+      }, "Course ID :"), _react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "assignmentId"
+      })), _react.default.createElement("div", {
+        className: "form-group"
+      }, _react.default.createElement("label", {
+        for: "inCharge"
+      }, "Lecture in Charge :"), _react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "inCharge"
+      })), _react.default.createElement("div", {
+        className: "form-group"
+      }, _react.default.createElement("div", {
+        class: "input-group"
+      }, _react.default.createElement("div", {
+        class: "input-group-prepend"
+      }, _react.default.createElement("span", {
+        class: "input-group-text",
+        id: "inputGroupFileAddon01"
+      }, "Upload Assignment")), _react.default.createElement("div", {
+        class: "custom-file"
+      }, _react.default.createElement("input", {
+        type: "file",
+        class: "custom-file-input",
+        id: "inputGroupFile01",
+        "aria-describedby": "inputGroupFileAddon01"
+      }), _react.default.createElement("label", {
+        class: "custom-file-label",
+        for: "inputGroupFile01"
+      }, "Choose file")))), _react.default.createElement("br", null), _react.default.createElement("button", {
+        type: "submit",
+        class: "btn btn-primary"
+      }, "Update Marks")));
+    }
+  }]);
+
+  return UpdateMarks;
+}(_react.Component);
+
+exports.default = UpdateMarks;
 },{"react":"node_modules/react/index.js"}],"app.js":[function(require,module,exports) {
 "use strict";
 
@@ -30226,6 +30446,10 @@ var _Submissions = _interopRequireDefault(require("./src/components/Submissions"
 var _AddCourse = _interopRequireDefault(require("./src/components/AddCourse"));
 
 var _UpdateCourse = _interopRequireDefault(require("./src/components/UpdateCourse"));
+
+var _AddMarks = _interopRequireDefault(require("./src/components/AddMarks"));
+
+var _UpdateMarks = _interopRequireDefault(require("./src/components/UpdateMarks"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30289,7 +30513,17 @@ function (_Component) {
       }, _react.default.createElement(_reactRouterDom.Link, {
         to: "/courses/:id",
         className: "nav-link"
-      }, "Update Course")))), _react.default.createElement("br", null), _react.default.createElement(_reactRouterDom.Route, {
+      }, "Update Course")), _react.default.createElement("li", {
+        className: "nav-item"
+      }, _react.default.createElement(_reactRouterDom.Link, {
+        to: "/marks",
+        className: "nav-link"
+      }, "Add Marks")), _react.default.createElement("li", {
+        className: "nav-item"
+      }, _react.default.createElement(_reactRouterDom.Link, {
+        to: "/marks/:id",
+        className: "nav-link"
+      }, "Update Marks")))), _react.default.createElement("br", null), _react.default.createElement(_reactRouterDom.Route, {
         path: "/",
         exact: true,
         component: _Assignments.default
@@ -30305,6 +30539,14 @@ function (_Component) {
         path: "/courses/:id",
         exact: true,
         component: _UpdateCourse.default
+      }), _react.default.createElement(_reactRouterDom.Route, {
+        path: "/marks",
+        exact: true,
+        component: _AddMarks.default
+      }), _react.default.createElement(_reactRouterDom.Route, {
+        path: "/marks/:id",
+        exact: true,
+        component: _UpdateMarks.default
       })));
     }
   }]);
@@ -30313,7 +30555,7 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = App;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","bootstrap/dist/css/bootstrap.min.css":"node_modules/bootstrap/dist/css/bootstrap.min.css","./src/components/Assignments":"src/components/Assignments.js","./src/components/Submissions":"src/components/Submissions.js","./src/components/AddCourse":"src/components/AddCourse.js","./src/components/UpdateCourse":"src/components/UpdateCourse.js"}],"main.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","bootstrap/dist/css/bootstrap.min.css":"node_modules/bootstrap/dist/css/bootstrap.min.css","./src/components/Assignments":"src/components/Assignments.js","./src/components/Submissions":"src/components/Submissions.js","./src/components/AddCourse":"src/components/AddCourse.js","./src/components/UpdateCourse":"src/components/UpdateCourse.js","./src/components/AddMarks":"src/components/AddMarks.js","./src/components/UpdateMarks":"src/components/UpdateMarks.js"}],"main.js":[function(require,module,exports) {
 "use strict";
 
 var _reactDom = require("react-dom");
@@ -30353,7 +30595,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54000" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56848" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

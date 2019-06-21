@@ -5,6 +5,8 @@ import Assignment from './src/components/Assignments';
 import Submission from './src/components/Submissions';
 import AddCourse from './src/components/AddCourse';
 import UpdateCourse from './src/components/UpdateCourse';
+import AddMarks from './src/components/AddMarks';
+import UpdateMarks from './src/components/UpdateMarks';
 
 export default class App extends Component{
 
@@ -34,6 +36,16 @@ export default class App extends Component{
                                            Update Course
                                         </Link>
                                     </li>
+                                    <li className="nav-item">
+                                        <Link to="/marks" className="nav-link">
+                                           Add Marks 
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="/marks/:id" className="nav-link">
+                                           Update Marks 
+                                        </Link>
+                                    </li>
                                     </ul>
                                    </nav>
                                    <br />
@@ -42,6 +54,8 @@ export default class App extends Component{
                 <Route path="/submissions" exact component={Submission}/>
                 <Route path="/courses" exact component={AddCourse}/>
                 <Route path="/courses/:id" exact component={UpdateCourse}/>
+                <Route path="/marks" exact component={AddMarks}/>
+                <Route path="/marks/:id" exact component={UpdateMarks}/>
 
                  </div>
             </Router>
