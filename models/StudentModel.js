@@ -3,7 +3,19 @@ const Schema = mongoose.Schema;
 
 //Create Schema
 const StudentSchema = new Schema({
-  name: {
+  fname: {
+    type: String,
+    required: true
+  },
+  lname: {
+    type: String,
+    required: true
+  },
+  dob: {
+    type: String,
+    required: true
+  },
+  uid: {
     type: String,
     required: true
   },
@@ -29,4 +41,4 @@ const StudentSchema = new Schema({
   }
 });
 
-module.exports = Student = mongoose.model("student", StudentSchema);
+module.exports = Student = mongoose.model("students", StudentSchema);

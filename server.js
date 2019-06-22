@@ -3,11 +3,14 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 
-const users = require("./routes/api/users");
-const studets = require("./routes/api/student");
-const lecturers = require("./routes/api/lecturer");
-const notifications = require("./routes/api/notification");
+const admins = require("./routes/api/admins");
+// const assignments = require("./routes/api/assignment");
+const courses = require("./routes/api/courses");
+const instructors = require("./routes/api/instructors");
 const marks = require("./routes/api/marks");
+// const notifications = require("./routes/api/notification");
+const studets = require("./routes/api/student");
+const users = require("./routes/api/users");
 
 const app = express();
 
@@ -32,11 +35,14 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 
 //use routes
-app.use("/api/users", users);
-app.use("/api/student", studets);
-app.use("/api/lecturer", lecturers);
-app.use("/api/notification", notifications);
+app.use("/api/admins", admins);
+// app.use("/api/assignments", assignments);
+app.use("/api/courses", courses);
+app.use("/api/instructors", instructors);
 app.use("/api/marks", marks);
+// app.use("/api/notifications", notifications);
+app.use("/api/students", studets);
+app.use("/api/users", users);
 
 const port = process.env.PORT || 5000;
 

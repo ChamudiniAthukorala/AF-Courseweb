@@ -3,24 +3,24 @@ const router = express.Router();
 const keys = require("../../config/keys");
 
 //db not complete
-const Student = require("../../models/StudentModel");
+const Instructor = require("../../models/InstructorModel");
 
 //check status not cokplete
 router.get("/test", (req, res) => res.json({ msg: "______ works" }));
 
 //load input valications
-const validateRegisterInputStudent = require("../../validation/register_student");
+const validateRegisterInputInstructor = require("../../validation/register_instructor");
 
 //add
 router.post("/", (req, res) => {
-  const { errors, isValid } = validateRegisterInputStudent(req.body);
+  const { errors, isValid } = validateRegisterInputInstructor(req.body);
 
   if (!isValid) {
     return res.status(400).json(errors);
   }
 
-  Student.findOne({ email: req.body.email }).then(student => {
-    if (student) {
+  Instructor.findOne({ email: req.body.email }).then(instructor => {
+    if (instructor) {
       errors.email = "Email already exists";
       return res.status(400).json(errors);
     } else {
@@ -31,7 +31,7 @@ router.post("/", (req, res) => {
         d: "mm" //default
       });
 
-      const newStudent = new Student({
+      const newInstructor = new Instructor({
         fname: req.body.name,
         lname: req.body.lname,
         dob: req.body.dob,
@@ -42,12 +42,12 @@ router.post("/", (req, res) => {
       });
 
       bcrypt.genSalt(10, (err, salt) => {
-        bcrypt.hash(newStudent.password, salt, (err, hash) => {
+        bcrypt.hash(newInstructor.password, salt, (err, hash) => {
           if (err) throw err;
-          newStudent.password = hash;
-          newStudent
+          newInstructor.password = hash;
+          newInstructor
             .save()
-            .then(student => res.json(student))
+            .then(instructor => res.json(instructor))
             .catch(err => console.log(err));
         });
       });
@@ -56,10 +56,10 @@ router.post("/", (req, res) => {
 });
 
 //remove
-router.delete("/:student_id", function(req, res) {
-  console.log(req.params.student_id);
-  let id = req.params.student_id;
-  Student.remove(
+router.delete("/:instructor_id", function(req, res) {
+  console.log(req.params.instructor_id);
+  let id = req.params.instructor_id;
+  Instructor.remove(
     {
       _id: id
     },
@@ -71,9 +71,9 @@ router.delete("/:student_id", function(req, res) {
 });
 
 //update
-router.put("/:student_id", function(req, res) {
+router.put("/:instructor_id", function(req, res) {
   // create mongose method to update a existing record into collection
-  let id = req.params.student_id;
+  let id = req.params.instructor_id;
   const data = {
     fname: req.body.name,
     lname: req.body.lname,
@@ -87,10 +87,10 @@ router.put("/:student_id", function(req, res) {
       if (err) throw err;
       data.password = hash;
       // save the user
-      Student.findByIdAndUpdate(id, data, function(err, student) {
+      Instructor.findByIdAndUpdate(id, data, function(err, instructor) {
         if (err) throw err;
 
-        res.send("Successfully! Admin updated - " + student.fname);
+        res.send("Successfully! Admin updated - " + instructor.fname);
       });
     });
   });
@@ -98,37 +98,37 @@ router.put("/:student_id", function(req, res) {
 
 //find all
 router.get("/", function(req, res) {
-  Student.find(function(err, student) {
+  Instructor.find(function(err, instructor) {
     if (err) {
       res.status(400).send(e);
     } else {
       res.json({
-        fname: req.student.name,
-        lname: req.student.lname,
-        dob: req.student.dob,
-        uid: req.student.uid,
-        email: req.student.email,
-        password: req.student.password
+        fname: req.instructor.name,
+        lname: req.instructor.lname,
+        dob: req.instructor.dob,
+        uid: req.instructor.uid,
+        email: req.instructor.email,
+        password: req.instructor.password
       });
     }
   });
 });
 
 //find by id
-router.get("/:adminID:", (req, res) => {
-  const uid = req.body.adminID;
-  Student.findOne({ uid }).then(admin => {
+router.get("/:instructor_id:", (req, res) => {
+  const uid = req.body.instructor_id;
+  Instructor.findOne({ uid }).then(instructor => {
     //check for marks
-    if (!admin) {
+    if (!instructor) {
       return res.status(404).json("User not found!");
     } else {
       res.json({
-        fname: req.student.name,
-        lname: req.student.lname,
-        dob: req.student.dob,
-        uid: req.student.uid,
-        email: req.student.email,
-        password: req.student.password
+        fname: req.instructor.name,
+        lname: req.instructor.lname,
+        dob: req.instructor.dob,
+        uid: req.instructor.uid,
+        email: req.instructor.email,
+        password: req.instructor.password
       });
     }
   });

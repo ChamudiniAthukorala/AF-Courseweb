@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 //Create Schema
-const AdminSchema = new Schema({
+const InstructorSchema = new Schema({
   fname: {
     type: String,
     required: true
@@ -37,8 +37,8 @@ const AdminSchema = new Schema({
   },
   type: {
     type: String,
-    default: "admin"
+    default: "instructor"
   }
 });
 
-module.exports = Admin = mongoose.model("admins", AdminSchema);
+module.exports = Instructor = mongoose.model("instructors", InstructorSchema);

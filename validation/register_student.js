@@ -1,7 +1,7 @@
 const Validator = require("validator");
 const isEmpty = require("./is-empty");
 
-module.exports = function validateRegisterInpu(data) {
+module.exports = function validateRegisterInputStudent(data) {
   let errors = {};
 
   data.name = !isEmpty(data.name) ? data.name : "";
@@ -11,8 +11,8 @@ module.exports = function validateRegisterInpu(data) {
     ? data.confirmPassword
     : "";
 
-  if (!Validator.isLength(data.password, { min: 8 })) {
-    errors.password = "Password must be more than 8 characters";
+  if (!Validator.isLength(data.name, { min: 8 })) {
+    errors.name = "Name must be more than 8 characters";
   }
 
   if (Validator.isEmpty(data.name)) {
