@@ -2,21 +2,24 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
+const upload = require("express-fileupload");
 
 const admins = require("./routes/api/admins");
-// const assignments = require("./routes/api/assignment");
+const assignments = require("./routes/api/assignments");
 const courses = require("./routes/api/courses");
 const instructors = require("./routes/api/instructors");
 const marks = require("./routes/api/marks");
-// const notifications = require("./routes/api/notification");
+//const notifications = require("./routes/api/notification");
 const studets = require("./routes/api/student");
 const users = require("./routes/api/users");
+const assignInstructor = require("./routes/api/courseInstructor");
 
 const app = express();
 
 //Body parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(upload());
 
 //DB Config
 const db = require("./config/keys").mongoURI;
@@ -36,13 +39,14 @@ require("./config/passport")(passport);
 
 //use routes
 app.use("/api/admins", admins);
-// app.use("/api/assignments", assignments);
+app.use("/api/assignments", assignments);
 app.use("/api/courses", courses);
 app.use("/api/instructors", instructors);
 app.use("/api/marks", marks);
-// app.use("/api/notifications", notifications);
+//app.use("/api/notifications", notifications);
 app.use("/api/students", studets);
 app.use("/api/users", users);
+app.use("/api/assignInstructor", assignInstructor);
 
 const port = process.env.PORT || 5000;
 
