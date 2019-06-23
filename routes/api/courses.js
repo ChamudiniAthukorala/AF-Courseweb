@@ -24,7 +24,7 @@ router.post("/add", (req, res) => {
   newCourse
     .save()
     .then(course => {
-      res.status(200).json("Marks added");
+      res.status(200).json("New Course added");
     })
     .catch(e => {
       res.status(400).send(e);
@@ -41,7 +41,7 @@ router.delete("/:course_id", function(req, res) {
     },
     function(err) {
       if (err) res.send(err);
-      else res.send("Successfully! Admin has been Deleted.");
+      else res.send("Successfully! Course has been Deleted.");
     }
   );
 });
@@ -50,7 +50,7 @@ router.delete("/:course_id", function(req, res) {
 router.put("/updateCourse/:id", (req, res) => {
   Course.findById(req.params.id, function(err, course) {
     if (!course) {
-      res.status(400).send("Marks details not found");
+      res.status(400).send("Course details not found");
     } else (course.courseId = req.body.courseId), (course.courseName = req.body.courseName), (course.description = req.body.description), (course.year = req.body.year), (course.semester = req.body.semester), (course.lectureIncharge = req.body.lectureIncharge);
 
     course
